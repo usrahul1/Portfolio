@@ -4,3 +4,22 @@ var typed = new Typed(".cont",{
     backSpeed: 150,
     loop: true
 })
+
+setInterval(() => {
+    hr_obj = document.getElementsByClassName("hr")[0]
+    min_obj = document.getElementsByClassName("min")[0]
+    sec_obj = document.getElementsByClassName("sec")[0]
+
+
+    d = new Date(); //object of date()
+    hr = d.getHours();
+    min = d.getMinutes();
+    sec = d.getSeconds();
+    hr_rotation = 30 * hr + min / 2; //converting current time
+    min_rotation = 6 * min;
+    sec_rotation = 6 * sec;
+ 
+    hr_obj.style.transform = `rotate(${hr_rotation}deg)`;
+    min_obj.style.transform = `rotate(${min_rotation}deg)`;
+    sec_obj.style.transform = `rotate(${sec_rotation}deg)`;
+}, 1000);
