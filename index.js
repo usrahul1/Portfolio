@@ -23,3 +23,15 @@ setInterval(() => {
     min_obj.style.transform = `rotate(${min_rotation}deg)`;
     sec_obj.style.transform = `rotate(${sec_rotation}deg)`;
 }, 1000);
+
+function show(){
+    let x = document.getElementsByClassName("abt")[0];
+    let y = document.getElementsByClassName("hsdiv")[0];
+
+    if (x.style.height === "0rem") {
+        x.style.height = "10rem";
+    } else {
+        x.style.height = "0rem";
+    }
+
+}
