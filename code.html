@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -17,7 +18,7 @@
         <section>
             <nav>
                 <div class="headtop">
-                    <h2><span>R</span>ahul.</h2>
+                    <a href="#"><h2><span>R</span>ahul.</h2></a>
                     <i class="fa-solid fa-bars" id="burger" onclick="show()"></i>
                 </div>
                 <div class="abt">
@@ -30,11 +31,11 @@
             <div class="hsdiv">
                 <div class="text">
                     <h3>Heya! I am,</h3><br>
-                    <h2 class="glitch">Sai Rahul Urumu</h2>
+                    <h2 class="glitch" data-aos="flip-down" data-aos-duration="1200">Sai Rahul Urumu</h2>
                     <h4><span class="cont"></span></h4>
                 </div>
                 <div class="img">
-                    <img src="./zoro.png" alt="Image"/>
+                    <img src="./zoro.png" alt="Image" data-aos="zoom-in" data-aos-duration="1200"/>
                 </div>
             </div>
         </section>
@@ -63,6 +64,10 @@
 
     <script src="https://kit.fontawesome.com/369e2205cf.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="./index.js"></script>
 </body>
 </html>
