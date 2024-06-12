@@ -24,14 +24,24 @@ setInterval(() => {
     sec_obj.style.transform = `rotate(${sec_rotation}deg)`;
 }, 1000);
 
-function show(){
-    let x = document.getElementsByClassName("abt")[0];
-    let y = document.getElementsByClassName("hsdiv")[0];
+let button = document.querySelector("#burger")[0]
+button.addEventListener('click', show)
 
-    if (x.style.height === "0rem") {
-        x.style.height = "10rem";
+function show(){
+    let x = document.querySelector(".abt-asa")
+    let y = document.querySelector(".abt")
+    let icon = document.querySelector("#burger")
+    let navs = document.querySelector("nav")
+
+    x.classList.toggle("open")
+    y.classList.toggle("open")
+    
+    if (icon.classList.contains('fa-bars')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
     } else {
-        x.style.height = "0rem";
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
     }
 
 }
