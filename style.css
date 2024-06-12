@@ -71,9 +71,11 @@ body {
     animation: glitch 2s infinite linear;
 }
 
-nav {
+/* nav {
     display: flex;
     align-items: center;
+    border: 10px solid wheat;
+    height: fit-content;
 }
 
 nav h2 {
@@ -90,17 +92,47 @@ nav h2 span {
 nav .abt {
     position: absolute;
     right: 0;
-    /* margin-right: 5%; */
+   //////// margin-right: 5%; 
     padding-top: 1%;
     gap: 1.5rem;
+} */
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 5rem;
+    align-items: center;
+}
+
+nav h2 {
+    font-size: 3rem;
+    z-index: 150;
+    position: relative;
+}
+
+nav h2 span {
+    color: #FAA924;
+    font-size: 3.5rem;
+}
+
+.abt{
+    display: flex;
 }
 
 .abt a {
     cursor: pointer;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 600;
+    padding: 5px;
+    transition: all 0.5s ease;
+}
+
+.abt a:hover{
+    color: #FAA924;
+    transform: translateY(-5px);
+    animation: glitch 2s linear infinite;
 }
 
 @keyframes glitch {
@@ -268,7 +300,7 @@ footer hr {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 759px) {
 
     *{
         margin: 0;
@@ -326,12 +358,9 @@ footer hr {
         align-items: center;
         height: inherit;
         width: inherit;
+        position: absolute;
+        transform: translateY(-30vw);
     }
-
-    .headtop{
-        margin: 2rem;
-        width: 100%;
-    } 
     
     .hsdiv{
         position: relative;
@@ -370,9 +399,10 @@ footer hr {
         position: absolute;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: center;
         font-size: 3rem;
+        margin: 0 auto;
     }
 
     nav{
@@ -395,7 +425,7 @@ footer hr {
         display: inline;
         font-size: 2rem;
         position: absolute;
-        right: 1rem;
+        right: 1vw;
         cursor: pointer;
         z-index: 565658;
     }
@@ -460,4 +490,63 @@ footer hr {
         flex-direction: column-reverse;
     }
 
+}
+
+@media (max-width: 989px) and (min-width: 760px) {
+
+    .glitch{
+        font-size: 2.25rem;
+    }
+
+    .text h3{
+        font-size: 2rem;
+    }
+
+    .cont{
+        font-size: 2rem;
+    }
+
+    .hsdiv{
+        margin: 0%;
+    }
+
+    .hr, .min, .sec{
+        display: none;
+    }
+
+    .text2 h5{
+        font-size: 1.75vw;
+    }
+
+    .text2 h1{
+        font-size: 2.5vw;
+    }
+
+    .cont2, .text2{
+        border: 10px solid wheat;
+    }
+
+}
+
+
+@media (max-width:1480px) and (min-width: 990px) {
+    .text h3{
+        font-size: 2rem;
+    }
+
+    .glitch{
+        font-size: 2.5rem;
+    }
+
+    .cont{
+        font-size: 2rem;
+    }
+
+    .text2 h5{
+        font-size: 1rem;
+    }
+
+    .text2 h1{
+        font-size: 2rem;
+    }
 }
