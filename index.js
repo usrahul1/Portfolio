@@ -1,3 +1,8 @@
+const preloader = document.querySelector("[data-preloader]")
+window.addEventListener("load", () => {
+    preloader.classList.add("remove");
+});
+
 var typed = new Typed(".cont",{
     strings:["UI/UX Designer","Web Developer","Freelancer","Student"],
     typeSpeed: 150,
