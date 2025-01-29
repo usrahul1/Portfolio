@@ -1,0 +1,59 @@
+<!-- <dialog class="popup" data-type="">
+    <div class="popupCont"><a class="closeModal">Close<i class="fa-solid fa-xmark"></i></a></div>
+    <form method="post">
+        <% if (dataType === 'title') { %>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='project') {%>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='langs') {%>
+            <%- include('./popupPartials/langs.ejs') %>
+        <% } else if(dataType ==='fw') {%>
+            <%- include('./popupPartials/fw.ejs') %>
+        <% } else if(dataType ==='certif') {%>
+            <%- include('./popupPartials/certif.ejs') %>
+        <% } else {%>
+            <h1 style="color: black;">modda gudu</h1>
+        <% } %>
+        <button type="submit" class="submitPopup">Submit</button>
+    </form>
+</dialog> -->
+
+<!-- <dialog class="popup" data-type="<%= dataType %>">
+    <div class="popupCont">
+        <a class="closeModal">Close<i class="fa-solid fa-xmark"></i></a>
+    </div>
+    <form method="post">
+        <% if (dataType === 'title') { %>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if (dataType === 'project') { %>
+            <%- include('./popupPartials/project.ejs') %>
+        <% } else { %>
+            <h1 style="color: black;">Unknown Type</h1>
+        <% } %>
+        <button type="submit" class="submitPopup">Submit</button>
+    </form>
+</dialog> -->
+
+
+<dialog class="popup" data-type="<%= dataType %>">
+    <div class="popupCont"><a class="closeModal">Close<i class="fa-solid fa-xmark"></i></a></div>
+    <form method="post">
+        <% if (dataType === 'title') { %>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='project') {%>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='langs') {%>
+            <%- include('./popupPartials/langs.ejs') %>
+        <% } else if(dataType ==='fw') {%>
+            <%- include('./popupPartials/fw.ejs') %>
+        <% } else if(dataType ==='certif') {%>
+            <%- include('./popupPartials/certif.ejs') %>
+        <% } else {%>
+            <h1 style="color: black;">modda gudu</h1>
+        <% } %>
+        <button type="submit" class="submitPopup">Submit</button>
+    </form>
+</dialog>
+
+
+

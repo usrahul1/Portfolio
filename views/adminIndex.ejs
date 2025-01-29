@@ -1,0 +1,117 @@
+<!-- 1) Titles
+2)projects
+3)skills - langs, frameworks
+4)certifications -->
+
+
+<div class="titles">
+    <h1>Titles : </h1>
+    <a class="newTitle openModal" href="#" data-type="title">Add new title</a>
+    <div class="titlesAdminAll">
+        <div class="titlesAdmin">
+            <img src="/img/img.webp">
+            <div>
+                <div class="buttonTitle">
+                    <button class="editTitle">Edit</button>
+                    <button class="deleteTitle">Delete</button>
+                </div>
+                <h4>Title</h4>
+                <h5>Desc</h5>
+                <h6>Year</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="projects">
+    <h1>Projects : </h1>
+    <!-- <a class="newProject openModal" data-type="project">Add new project</a> -->
+    <a class="newProject openModal" href="#" data-type="project">Add new project</a>
+    <div class="projectsAdminAll">
+        <div class="projectsAdmin">
+            <img src="/img/img.webp">
+            <div>
+                <div class="buttonProj">
+                    <button class="editProject">Edit</button>
+                    <button class="deleteProject">Delete</button>
+                </div>
+                <h4>Title</h4>
+                <h5>Desc</h5>
+                <h6>githublink</h6>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="langs">
+    <h1>Languages: </h1>
+    <!-- <a class="newLangs openModal" data-type="langs">Add new language</a> -->
+    <a class="newLangs openModal" href="#" data-type="langs">Add new project</a>
+    <div class="langsSetCont">
+        <div class="langsSet">
+            <h3>Language Name</h3>
+            <div class="langsButton">
+                <button class="editLangs">Edit</button>
+                <button class="deleteLangs">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="frameworkAdmin">
+    <h1>Frameworks: </h1>
+    <!-- <a class="newFramework openModal" data-type="fw">Add new Framework</a> -->
+    <a class="newFramework openModal" href="#" data-type="fw">Add new project</a>
+    <div class="frameworkSetCont">
+        <div class="frameworkSet">
+            <h3>Framework Name</h3>
+            <div class="frameworkButton">
+                <button class="editFramework">Edit</button>
+                <button class="deleteFramework">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="certificationAdmin">
+    <h1>Certifications: </h1>
+    <!-- <button class="newCertification openModal" data-type="certif">Add new certification</button> -->
+    <a class="newCertification openModal" href="#" data-type="certif">Add new project</a>
+    <div class="certificationSetCont">
+        <div class="certificationSet">
+            <h3>Certification Name</h3>
+            <div class="certificationButton">
+                <button class="editCertification">Edit</button>
+                <button class="deleteCertification">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 
+title name - proj, lang, title, fw, certif 
+desc - title, proj
+github link (opt) - proj only
+year(opt) - title only
+img (opt) - proj, title
+-->
+
+<dialog class="popup" data-type="<%= dataType %>">
+    <div class="popupCont"><a class="closeModal">Close<i class="fa-solid fa-xmark"></i></a></div>
+    <form method="post">
+        <% if (dataType === 'title') { %>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='project') {%>
+            <%- include('./popupPartials/titles.ejs') %>
+        <% } else if(dataType ==='langs') {%>
+            <%- include('./popupPartials/langs.ejs') %>
+        <% } else if(dataType ==='fw') {%>
+            <%- include('./popupPartials/fw.ejs') %>
+        <% } else if(dataType ==='certif') {%>
+            <%- include('./popupPartials/certif.ejs') %>
+        <% } else {%>
+            <h1 style="color: black;">modda gudu</h1>
+        <% } %>
+        <button type="submit" class="submitPopup">Submit</button>
+    </form>
+</dialog>
