@@ -1,0 +1,19 @@
+<% if(error.length > 0) {%>
+    <div class="flashContent error">
+        <h2><%= error %> </h2>
+    </div>
+<% } %>
+
+<% if(note.length > 0) { %>
+    <div class="flashContent success">
+        <h2><%= note %> </h2>
+    </div>
+<% } %>
+
+<div class="adminLogin">
+    <h2 class="headingLogin">Login only for <span class="headingSpan">Restricted!</span></h2>
+    <form action="/admin/login" method="post">
+        <input type="password" class="adminPassword" name="adminPassword" placeholder="Enter the password" required>
+        <button type="submit">Submit</button>
+    </form> 
+</div>
