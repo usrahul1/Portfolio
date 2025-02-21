@@ -4,4 +4,4 @@ let langModel = mongo.Schema({
     langName: String
 })
 
-module.exports = mongo.Model("langModel", langModel)
+module.exports = mongo.model("langModel", langModel)
