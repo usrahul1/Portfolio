@@ -1,0 +1,56 @@
+<!-- title, language, project, certification, framework -->
+<% if (type == 'fw') { %>
+    <form class="editForm textEdit" method="post" action="/admin/edit?type=<%= type %>&id=<%= data._id %>">
+        <h2>Edit FrameWork</h2>
+        <div class="div">
+            <input type="text" name="frameTitle" value="<%= data.frameName %>" >
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+<% } else if (type == 'certif') { %>
+    <form class="editForm textEdit" method="post" action="/admin/edit?type=<%= type %>&id=<%= data._id %>">
+        <h2>Edit Certification</h2>
+        <div class="div">
+            <input type="text" name="formTitle" value="<%= data.certifName %>" >
+            <input type="number" name="formYear" value="<%= data.yearOfCompletion.getFullYear() %>" >
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+<% } else if (type == 'langs') {%>
+    <form class="editForm textEdit" method="post" action="/admin/edit?type=<%= type %>&id=<%= data._id %>">
+        <h2>Edit Language</h2>
+        <div class="div">
+            <input type="text" name="langName" value="<%= data.langName %>" >
+            <button type="submit">Submit</button>
+        </div>
+    </form> 
+<% } else if (type == 'project') { %>
+    <div class="containerEdit">
+        <h2 class="editHead">Edit Project</h2>
+        <form class="editForm" method="post" action="/admin/edit?type=<%= type %>&id=<%= data._id %>" enctype="multipart/form-data">
+            <img src="/img/uploads/<%= data.image %>" alt="current image">
+            <div class="div projectDIV">
+                <input type="text" name="formTitle" value="<%= data.projectTitle %>" >
+                <input type="text" name="formDesc" value="<%= data.projDesc %>" >
+                <input type="url" name="formLink" value="<%= data.githubLink %>" >
+                <input type="file" name="formPhoto">
+                <button type="submit">Submit</button>
+            </div>
+        </form> 
+    </div>
+<% } else if (type == 'title') {%>
+    <div class="containerEdit">
+        <h2 class="editHead">Edit Title</h2>
+        <form class="editForm" method="post" action="/admin/edit?type=<%= type %>&id=<%= data._id %>" enctype="multipart/form-data">
+            <img src="/img/uploads/<%= data.titleImg %>" name="formPhoto" alt="current image">
+            <div class="div projectDIV">
+                <input type="text" name="formTitle" value="<%= data.titleName %>">
+                <input type="text" name="formDesc" value="<%= data.titleDesc %>">
+                <input type="number" name="formYear" value="<%= data.titleYear.getFullYear() %>">
+                <input type="file" name="formPhoto">
+                <button type="submit">Submit</button>
+            </div>
+        </form> 
+    </div>
+    
+<% } %>

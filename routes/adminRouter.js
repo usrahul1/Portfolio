@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const { registerUser, loginUser, logoutUser } = require('../controllers/authControls')
+const { registerUser, loginUser, logoutUser, deleteItem, editItem, fetchDetails } = require('../controllers/authControls')
 const middle = require('../middleware/isLoggedIn')
 const langData = require('../data-adders/langdata')
 const fwD = require('../data-adders/fw-data')
@@ -8,6 +8,11 @@ const certif = require('../data-adders/certif-data')
 const proj = require('../data-adders/proj-data')
 const title = require('../data-adders/title-data')
 const upload = require('../config/multer-config')
+const certifModel = require('../models/certificationsModel')
+const fwModel = require('../models/frameworksModel')
+const langModel = require('../models/languagesModel')
+const projModel = require('../models/projectModel')
+const titleModel = require('../models/titlesModel')
 
 router.get("/register", (req, res) =>{
     res.render("adminRegister")
@@ -23,20 +28,40 @@ router.get("/login", (req, res)=>{
 
 router.post("/login", loginUser)
 
-router.get("/prof", middle, (req, res) => {
+router.get("/prof", middle, async (req, res) => {
     let note = req.flash("note");
     let error = req.flash("error")
+
+    let titleArray = await titleModel.find({}).lean()
+    let certifArray = await certifModel.find({}).lean()
+    let projArray = await projModel.find({}).lean()
+    let fwArray = await fwModel.find({}).lean()
+    let langArray = await langModel.find({}).lean()
+
+    console.log(titleArray)
+
     res.render("adminIndex", {
         dataType: null,
         note,
-        error 
+        error,
+        titleArray,
+        certifArray,
+        fwArray,
+        langArray,
+        projArray
     });
 });
 
-router.get("/new", (req, res) => {
+router.get("/new", async (req, res) => {
     const type = req.query.type
     let note = req.flash("note");
     let error = req.flash("error")
+
+    let titleArray = await titleModel.find({}).lean()
+    let certifArray = await certifModel.find({}).lean()
+    let projArray = await projModel.find({}).lean()
+    let fwArray = await fwModel.find({}).lean()
+    let langArray = await langModel.find({}).lean()
 
     if (!req.query.type) {
         return res.redirect("/prof");
@@ -45,7 +70,12 @@ router.get("/new", (req, res) => {
     res.render("adminIndex", {
         dataType: type,
         note,
-        error
+        error,
+        titleArray,
+        certifArray,
+        fwArray,
+        langArray,
+        projArray
     });
 
 })
@@ -77,6 +107,20 @@ router.post('/new', upload.single('formPhoto'), (req, res) => {
         }
     }
 })
+
+router.get('/delete', deleteItem)
+
+router.get('/edit', fetchDetails)
+
+router.post('/edit', upload.single('formPhoto'), async (req, res) => {
+    try {
+        await editItem(req, res);
+    } catch (error) {
+        console.error("Error in edit route:", error); // Log error for debugging
+        res.status(500).send({ message: "Error in edit route", error: error.toString() });
+    }
+});
+
 
 router.post('/logout', logoutUser)
 

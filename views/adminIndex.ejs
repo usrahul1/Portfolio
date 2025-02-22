@@ -22,84 +22,118 @@
 <div class="titles">
     <h1>Titles : </h1>
     <a class="newTitle openModal" href="/admin/new?type=title">Add new title</a>
-    <div class="titlesAdminAll">
-        <div class="titlesAdmin">
-            <img src="/img/img.webp">
-            <div>
-                <div class="buttonTitle">
-                    <button class="editTitle">Edit</button>
-                    <button class="deleteTitle">Delete</button>
+    <% if (titleArray.length > 0) { %>
+        <div class="titlesAdminAll">
+            <% titleArray.reverse().forEach((obj) => { %>
+                <div class="titlesAdmin">
+                    <img src="/img/uploads/<%= obj.titleImg %>" alt="Title Image">
+                    <div>
+                        <div class="buttonTitle">
+                            <a href="/admin/edit?type=title&id=<%= obj._id %>" class="editTitle">Edit</a>
+                            <a href="/admin/delete?type=title&id=<%= obj._id %>" class="deleteTitle">Delete</a>
+                        </div>
+                        <h4><%= obj.titleName %></h4>
+                        <h5><%= obj.titleDesc %></h5>
+                        <h6><%= new Date(obj.titleYear).getFullYear() %></h6>
+                    </div>
                 </div>
-                <h4>Title</h4>
-                <h5>Desc</h5>
-                <h6>Year</h6>
-            </div>
+            <% }); %>
         </div>
-    </div>
+    <% } else { %>
+        <h2>Oopsie! No titles added yet :)</h2>
+    <% } %>
+    
 </div>
 
 <div class="projects">
     <h1>Projects : </h1>
     <a class="newProject openModal" href="/admin/new?type=project">Add new project</a>
-    <div class="projectsAdminAll">
-        <div class="projectsAdmin">
-            <img src="/img/img.webp">
-            <div>
-                <div class="buttonProj">
-                    <button class="editProject">Edit</button>
-                    <button class="deleteProject">Delete</button>
+    <% if (projArray.length > 0) { %>
+        <div class="projectsAdminAll">
+            <% projArray.reverse().forEach((obj) => { %>
+                <div class="projectsAdmin">
+                    <img src="/img/uploads/<%= obj.image %>" alt="Project Image">
+                    <div>
+                        <div class="buttonProj">
+                            <a href="/admin/edit?type=project&id=<%= obj._id %>" class="editProject">Edit</a>
+                            <a href="/admin/delete?type=project&id=<%= obj._id %>" class="deleteProject">Delete</a>
+                        </div>
+                        <h4><%= obj.projectTitle %></h4>
+                        <h5><%= obj.projDesc %></h5>
+                        <h6><a href="<%= obj.githubLink %>" target="_blank">GitHub Link</a></h6>
+                    </div>
                 </div>
-                <h4>Title</h4>
-                <h5>Desc</h5>
-                <h6>githublink</h6>
-            </div>
+            <% }); %>
         </div>
-    </div>
+    <% } else { %>
+        <h2>Oopsie! No projects added yet :)</h2>
+    <% } %>
 </div>
 
 <div class="langs">
     <h1>Languages: </h1>
     <!-- <a class="newLangs openModal" data-type="langs">Add new language</a> -->
-    <a class="newLangs openModal" href="/admin/new?type=langs">Add new project</a>
-    <div class="langsSetCont">
-        <div class="langsSet">
-            <h3>Language Name</h3>
-            <div class="langsButton">
-                <button class="editLangs">Edit</button>
-                <button class="deleteLangs">Delete</button>
-            </div>
+    <a class="newLangs openModal" href="/admin/new?type=langs">Add new Language</a>
+    <% if (langArray.length > 0) { %>
+        <div class="langsSetCont">
+            <% langArray.reverse().forEach((obj) => { %>
+                <div class="langsSet">
+                    <h3><%= obj.langName %></h3>
+                    <div class="langsButton">
+                        <a href="/admin/edit?type=langs&id=<%= obj._id %>" class="editLangs">Edit</a>
+                        <a href="/admin/delete?type=langs&id=<%= obj._id %>" class="deleteLangs">Delete</a>
+                    </div>
+                </div>
+            <% }); %>
         </div>
-    </div>
+    <% } else { %>
+        <h2>Oopsie! Add some :)</h2>
+    <% } %>
+    
 </div>
 
 <div class="frameworkAdmin">
     <h1>Frameworks: </h1>
     <!-- <a class="newFramework openModal" data-type="fw">Add new Framework</a> -->
-    <a class="newFramework openModal" href="/admin/new?type=fw">Add new project</a>
-    <div class="frameworkSetCont">
-        <div class="frameworkSet">
-            <h3>Framework Name</h3>
-            <div class="frameworkButton">
-                <button class="editFramework">Edit</button>
-                <button class="deleteFramework">Delete</button>
-            </div>
+    <a class="newFramework openModal" href="/admin/new?type=fw">Add new Framework</a>
+    <% if (fwArray.length > 0) { %>
+        <div class="frameworkSetCont">
+            <% fwArray.reverse().forEach((obj) => { %>
+                <div class="frameworkSet">
+                    <h3><%= obj.frameName %></h3>
+                    <div class="frameworkButton">
+                        <a href="/admin/edit?type=fw&id=<%= obj._id %>" class="editFramework">Edit</a>
+                        <a href="/admin/delete?type=fw&id=<%= obj._id %>" class="deleteFramework">Delete</a>
+                    </div>
+                </div>
+            <% }); %>
         </div>
-    </div>
+    <% } else { %>
+        <h2>Oopsie! Add some :)</h2>
+    <% } %>
+    
 </div>
 
 <div class="certificationAdmin">
     <h1>Certifications: </h1>
     <!-- <button class="newCertification openModal" data-type="certif">Add new certification</button> -->
-    <a class="newCertification openModal" href="/admin/new?type=certif">Add new project</a>
-    <div class="certificationSetCont">
-        <div class="certificationSet">
-            <h3>Certification Name</h3>
-            <div class="certificationButton">
-                <button class="editCertification">Edit</button>
-                <button class="deleteCertification">Delete</button>
-            </div>
+    <a class="newCertification openModal" href="/admin/new?type=certif">Add new certification</a>
+    <% if (certifArray.length>0) { %>
+        <div class="certificationSetCont">
+            <% certifArray.reverse().forEach((obj) => { %>
+                <div class="certificationSet">
+                    <h3><%= obj.certifName %></h3>
+                    <h3><%= obj.yearOfCompletion.getFullYear() %></h3>
+                    <div class="certificationButton">
+                        <a href="/admin/edit?type=certif&id=<%= obj._id %>" class="editCertification">Edit</a>
+                        <a href="/admin/delete?type=certif&id=<%= obj._id %>" class="deleteCertification">Delete</a>
+                    </div>
+                </div>
+            <% }); %>
         </div>
-    </div>
+        <% } else { %>
+            <h2>Oopsie! Add some :)</h2>
+        <% } %>
 </div>
 
 <!-- 
