@@ -1,11 +1,30 @@
 <div class="contact" data-aos="flip-down" data-aos-duration="1200">
-    <h2>Contact me,<br> waiting to hear from you <3</h2>
-    <div class="contactFormContainer">
-        <form class="contactForm" method="post" action="">
-            <input type="text" name="userKaName" placeholder="Your Name?">
-            <input type="email" name="userKaEmail" placeholder="Enter your email">
-            <textarea placeholder="Write your message!"></textarea>
-            <button class="submitForm" type="submit">Submit</button>
-        </form>
-    </div>
+	<h2>
+		Contact me,<br />
+		waiting to hear from you <3
+	</h2>
+	<div class="contactFormContainer">
+		<form
+			class="contactForm"
+			action="https://api.web3forms.com/submit"
+			method="POST"
+		>
+			<input
+				type="hidden"
+				name="access_key"
+				value="77568b0d-c496-4e1a-ae3e-846e1d18d292"
+			/>
+			<input type="text" name="userKaName" placeholder="Your Name?" />
+			<input
+				type="email"
+				name="userKaEmail"
+				placeholder="Enter your email"
+			/>
+			<textarea
+				name="textByBro"
+				placeholder="Write your message!"
+			></textarea>
+			<button class="submitForm" type="submit">Submit</button>
+		</form>
+	</div>
 </div>

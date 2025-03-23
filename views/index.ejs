@@ -16,7 +16,7 @@
             <div class="carousel-primary">
                 <% titleArray.forEach(obj => { %>
                     <div class="item">
-                        <img src="/img/uploads/<%= obj.titleImg %>">
+                        <img src="<%= obj.titleImg %>">
                         <div class="div">
                             <h4><%= obj.titleName %></h4>
                             <h5><%= obj.titleDesc %></h5>
@@ -28,7 +28,7 @@
             <div class="carousel-primary carousel-secondary">
                 <% titleArray.forEach(obj => { %>
                     <div class="item">
-                        <img src="/img/uploads/<%= obj.titleImg %>">
+                        <img src="<%= obj.titleImg %>">
                         <div class="div">
                             <h4><%= obj.titleName %></h4>
                             <h5><%= obj.titleDesc %></h5>
@@ -77,7 +77,7 @@
         <div class="projectsCont5">
             <% for(let i=0; i<Math.min(4, projArray.length); i++) { %>
                 <div class="proj">
-                    <img src="/img/img.webp" class="projectImage">
+                    <img src="<%= projArray[i].image %>" class="projectImage">
                     <h2> <%= projArray[i].projectTitle %></h2>
                     <h3><%= projArray[i].projDesc %></h3>
                     <a href="<%= projArray[i].githubLink %>"><h3>githublink</h3></a>
@@ -87,7 +87,7 @@
     <% } %>
     <div class="moreProjects">
         <hr>
-        <a href="/projects">Show More</a>
+        <a href="/projects" class="smProj">More?</a>
         <hr>
     </div>
 
@@ -102,6 +102,6 @@
     </div>
     <div class="text2 p2">
         <h3>Wanna know more about me?</h3>
-        <a href="./contactPage.ejs">Click Here to contact me! <3</a>
+        <a href="/contact">Click Here to contact me!</a>
     </div>
 </div>

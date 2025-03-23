@@ -1,12 +1,14 @@
-<section>
-    <ul class="projects">
-        <li>
-            <div class="proj" data-aos="zoom-in" data-aos-duration="1200">
-                <img src="/img/img.webp" class="projectImage">
-                <h2>Project Title</h2>
-                <h3>Project Description</h3>
-                <a><h3>githublink</h3></a>
-            </div>
-        </li>
-    </ul>
+<section class="cont6">
+    <% if(projArray.length > 0) { %>
+        <div class="projectsCont5">
+            <% for(let i=0; i<Math.min(4, projArray.length); i++) { %>
+                <div class="proj">
+                    <img src="/img/img.webp" class="projectImage">
+                    <h2> <%= projArray[i].projectTitle %></h2>
+                    <h3><%= projArray[i].projDesc %></h3>
+                    <a href="<%= projArray[i].githubLink %>"><h3>githublink</h3></a>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
 </section>
