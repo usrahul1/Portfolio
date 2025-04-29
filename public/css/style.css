@@ -150,6 +150,7 @@ nav h2 span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: -10;
 }
 
 .hr,
@@ -520,6 +521,76 @@ footer hr {
 	font-size: 2rem;
 }
 
+.item img {
+	width: 3rem;
+	border-radius: 50%;
+}
+
+/* .scroll-container {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	height: 100px; 
+}
+
+.carousel-primary,
+.carousel-secondary {
+	display: flex;
+	white-space: nowrap;
+	position: absolute;
+	width: max-content;
+	top: 0;
+	gap: 2rem;
+}
+
+.carousel-primary {
+	transform: translateX(100%);
+	animation: scroll-horizontal 20s linear infinite;
+	animation-delay: 2s;
+}
+
+.carousel-secondary {
+	margin-left: 2rem;
+	transform: translateX(100%);
+	animation: scroll-horizontal 20s linear infinite;
+	animation-delay: 10s;
+	visibility: hidden;
+	animation-fill-mode: forwards;
+}
+
+@keyframes scroll-horizontal {
+	0% {
+		transform: translateX(100%);
+		visibility: visible;
+	}
+	100% {
+		transform: translateX(-100%);
+		visibility: visible;
+	}
+}
+
+.scroll-container {
+	height: 5rem;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	gap: 1rem;
+	position: relative;
+} */
+
+.scroll-container {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+}
+
+.carousel-track {
+	margin-top: 2rem;
+	display: flex;
+	width: fit-content;
+	animation: scroll-horizontal 20s linear infinite;
+}
+
 .item {
 	display: flex;
 	gap: 1rem;
@@ -529,23 +600,26 @@ footer hr {
 	width: fit-content;
 	background-color: #ff917f;
 	z-index: 1000;
+	align-items: center;
 }
 
-.item img {
-	width: 3rem;
-	border-radius: 50%;
-}
-
-.scroll-container {
-	margin-top: 2rem;
-	height: 5rem;
-	width: 100%;
-	overflow: hidden;
+.item {
+	flex-shrink: 0;
+	margin: 0 1rem;
 	display: flex;
-	gap: 1rem;
-	position: relative;
+	white-space: nowrap;
 }
 
+@keyframes scroll-horizontal {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+/* 
 .carousel-primary,
 .carousel-secondary {
 	left: 100%;
@@ -562,7 +636,7 @@ footer hr {
 }
 
 .carousel-secondary {
-	display: none;
+	display: flex;
 	animation: scroll-horizontal 20s linear infinite;
 	animation-delay: 10s;
 }
@@ -575,9 +649,9 @@ footer hr {
 	100% {
 		left: -100%;
 	}
-}
+} */
 
-/* .carousel-primary:hover,
+.carousel-primary:hover,
 .carousel-primary:hover ~ .carousel-secondary {
 	-webkit-animation-play-state: paused;
 	-moz-animation-play-state: paused;
@@ -597,7 +671,7 @@ footer hr {
 	-moz-animation-play-state: paused;
 	-o-animation-play-state: paused;
 	animation-play-state: paused;
-} */
+}
 
 /* Cont 4 */
 
@@ -634,6 +708,7 @@ footer hr {
 .frameworks ul li {
 	font-weight: 500;
 	user-select: none;
+	font-size: 1.2rem;
 }
 
 .certif ul {
@@ -646,6 +721,7 @@ footer hr {
 .certif ul li {
 	font-weight: 500;
 	user-select: none;
+	font-size: 1.2rem;
 }
 
 /* Contact Page */
@@ -729,6 +805,7 @@ textarea::placeholder {
 
 .proj {
 	cursor: pointer;
+	height: 19rem;
 }
 
 .projectImage {
@@ -750,15 +827,15 @@ textarea::placeholder {
 .proj h2 {
 	color: #000;
 	text-decoration: underline;
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 }
 
 .proj h3 {
-	font-size: 1.25rem;
+	font-size: 1.5rem;
 }
 
 .proj a h3 {
-	font-size: 1.1rem;
+	font-size: 1.25rem;
 }
 
 .projAllView {
@@ -893,11 +970,14 @@ textarea::placeholder {
 	border: 1px solid black;
 	border-radius: 0.5rem;
 	padding: 0.5rem 0.75rem;
+	max-width: 20rem;
+	max-height: 22rem;
 }
 
 .titlesAdmin img,
 .projectsAdmin img {
-	width: 13rem;
+	width: 12rem;
+	margin: auto;
 }
 
 .buttonTitle,
@@ -1262,7 +1342,7 @@ textarea::placeholder {
 	}
 
 	/* Scrolling not working still */
-	.scroll-container {
+	/* .scroll-container {
 		margin-top: 2rem;
 		height: 5rem;
 		width: 100%;
@@ -1289,9 +1369,9 @@ textarea::placeholder {
 
 	.carousel-secondary {
 		display: none;
-		/* animation: scroll-horizontal 20s linear infinite; */
+		animation: scroll-horizontal 20s linear infinite;
 		animation-delay: 10s;
-	}
+	} */
 }
 
 @media (min-width: 1062px) and (max-width: 1431px) {
