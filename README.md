@@ -1,19 +1,46 @@
-#portfolio website
+# Portfolio Website
 
-built using men stack with ejs  
+A personal portfolio website built using the **MERN stack** (MongoDB, Express, Node.js) with **EJS** as the templating engine.
 
-for running it locally  
-1) clone and run npm install  
-2) then npm start  
+## Getting Started
 
-the ejs file format should be in this way btw  
-PORT=
-JWT_KEY=
-NAME=
-EXPRESS_SESSION_SECRET=
-MONGODB_URI=
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_SECRET=
-CLOUDINARY_API_KEY=
+To run this project locally:
 
-Thanks and cheers!
+1. **Clone the repository**
+
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    cd your-repo-name
+    ```
+
+2. **Install dependencies**
+
+    ```bash
+    npm install
+    ```
+
+3. **Create a `.env` file** in the root directory and define the following environment variables:
+
+    ```env
+    PORT=
+    JWT_KEY=
+    NAME=
+    EXPRESS_SESSION_SECRET=
+    MONGODB_URI=
+    CLOUDINARY_CLOUD_NAME=
+    CLOUDINARY_API_SECRET=
+    CLOUDINARY_API_KEY=
+    ```
+
+4. **Start the server**
+    ```bash
+    npm start
+    ```
+
+## EJS File Format
+
+Make sure to follow the proper EJS file structure and naming conventions. All EJS files should be placed in the `views` folder and use the `.ejs` extension.
+
+---
+
+Thanks and cheers! 🎉
