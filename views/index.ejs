@@ -10,7 +10,7 @@
 </div>
 
 <div class="cont3">
-    <h3>Me?</h3>
+    <h3 class="underline">Me?</h3>
     <% if (titleArray.length > 0) { %>
         <div class="scroll-container">
             <div class="carousel-track">
@@ -40,41 +40,8 @@
     <% } %>
 </div>
 
-
-<!-- <div class="cont3">
-    <h3> Me? </h3>
-    <% if (titleArray.length > 0) { %>
-        <div class="scroll-container">
-            <div class="carousel-primary">
-                <% titleArray.forEach(obj => { %>
-                    <div class="item">
-                        <img src="<%= obj.titleImg %>">
-                        <div class="div">
-                            <h4><%= obj.titleName %></h4>
-                            <h5><%= obj.titleDesc %></h5>
-                            <h6><%= obj.titleYear.getFullYear() %></h6>
-                        </div>
-                    </div>
-                <% }); %>
-            </div>
-            <div class="carousel-primary carousel-secondary">
-                <% titleArray.forEach(obj => { %>
-                    <div class="item">
-                        <img src="<%= obj.titleImg %>">
-                        <div class="div">
-                            <h4><%= obj.titleName %></h4>
-                            <h5><%= obj.titleDesc %></h5>
-                            <h6><%= obj.titleYear.getFullYear() %></h6>
-                        </div>
-                    </div>
-                <% }); %>
-            </div>
-        </div>
-    <% } %>     
-</div> -->
-
 <div class="cont4">
-    <h3>Skills?</h3>
+    <h3 class="underline">Skills?</h3>
     <div class="stuff">
         <div class="languages">
             <h2>Languages</h2>
@@ -93,7 +60,7 @@
             </ul>
         </div>
     </div>
-    <h3>Certifications?</h3>
+    <h3 class="underline">Certifications?</h3>
     <div class="certif">
         <ul>
             <% certifArray.forEach(element => { %>
@@ -104,7 +71,7 @@
 </div>
 
 <div class="cont5">
-    <h3>Projects?</h3>
+    <h3 class="underline">Projects?</h3>
     <% if(projArray.length > 0) { %>
         <div class="projectsCont5">
             <% for(let i=0; i<Math.min(4, projArray.length); i++) { %>

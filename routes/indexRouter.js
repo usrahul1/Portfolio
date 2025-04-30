@@ -21,6 +21,10 @@ router.get("/", async (req, res) => {
 	});
 });
 
+router.get("/about", (req, res) => {
+	res.render("aboutPage");
+});
+
 router.get("/projects", async (req, res) => {
 	let projArray = await projModel.find({}).lean();
 	res.render("projectPage", { projArray });
