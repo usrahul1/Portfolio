@@ -1,6 +1,6 @@
 # Portfolio Website
 
-A personal portfolio website built using the **MERN stack** (MongoDB, Express, Node.js) with **EJS** as the templating engine.
+A personal portfolio website built using the **MEN stack** (MongoDB, Express, Node.js) with **EJS** as the templating engine.
 
 ## Getting Started
 

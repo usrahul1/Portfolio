@@ -2302,3 +2302,13 @@ textarea::placeholder {
 .gl2 {
 	font-size: 3rem;
 }
+
+.abt-cont-2 {
+	margin-top: 3%;
+	font-size: 1.3rem;
+	margin-left: 8%;
+}
+
+.abt-ul {
+	color: black;
+}
